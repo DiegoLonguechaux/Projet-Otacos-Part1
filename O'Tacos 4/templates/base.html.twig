@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Original French Tacos - O'Tacos</title>
+     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        <link href="{{ asset('./css/style.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+</head>
+<body>
+
+<main class="page">
+    <div class="organisation">
+        <div class="barredenav">
+            <div class="sidebar">
+
+                <div class="selection_lang">
+                    <img src="./images/france.svg" alt="">
+                    <a class="langue" href="">FR</a>
+                </div>
+    
+                <div class="selection-nav">
+                    <nav class="primary-nav">
+                        <ul class="primary-nav__list">
+                            <li class="primary-nav__item active">
+                                <a class="primary-nav__link" href="/">Accueil</a>
+                            </li>
+                            <li class="primary-nav__item">
+                                <a class="primary-nav__link" href="#">Click & Collect</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+    
+                <footer class="footer">
+                    <img class="logotacos" src="./images/logotacos.svg" alt="">
+                    <div class="socialmedia">
+                        <img class="fb" src="./images/fb.svg" alt="">
+                        <img class="instagram" src="./images/insta.svg" alt="">
+                    </div>
+    
+                    <div class="info">
+                        <ul class="info_list">
+                            <li class="info_item">
+                                <a class="info_font" href="">Contact</a>
+                            </li>
+                            <li class="info_item">
+                                <a class="info_font" href="">Mentions légales</a>
+                            </li>
+                            <li class="info_item">
+                                <a class="info_font" href="">Cookie Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+
+        <section>
+            <div class="header">
+                <img onclick="window.location.href = '/';" class="return" src="./images/return.svg" alt="accueil">
+                <div class="header_content">
+                    <h1 class="header_title">Limoges<br>A emporter</h1>
+                </div>
+                <img class="logo" src="./images/logotacos.svg" alt="">
+            </div>
+
+
+            <div>
+                <ul class="categorie">
+                    <li class="categorie_item_a">
+                        <a class="categorie_font" href="/click&collect">ALL</a>
+                    </li>
+                    <li class="categorie_item_t">
+                        <a class="categorie_font" href="/tacos">TACOS</a>
+                    </li>
+                        <li class="categorie_item_f">
+                        <a class="categorie_font" href="/frites">FRITES</a>
+                    </li>
+                    <li class="categorie_item_b">
+                        <a class="categorie_font" href="/boissons">BOISSONS</a>
+                    </li>
+                </ul>
+            </div> 
+
+
+            {% if listeTacos is defined %}
+                    <div>
+                        <h2 class="title_categorie">TACOS</h2>
+                        <div class="buttons" a href="/click&collect" >
+                            {{ include('tacos.html.twig') }}
+                        </div>
+                    </div>
+
+            {% endif %}
+                
+
+            {% if listeFrite is defined %}
+                    <div>
+                        <h2 class="title_categorie">FRITES</h2>
+                        <div class="buttons">
+                            {{ include('frite.html.twig') }}
+                        </div>
+                    </div>
+            {% endif %}
+
+
+
+            {% if listeBoisson is defined %}
+                    <div>
+                        <h2 class="title_categorie">BOISSONS</h2>
+                        <div class="buttons">
+                            {{ include('boisson.html.twig') }}
+                        </div>
+                    </div>
+            {% endif %}
+        </section>
+    </div>
+    
+    <div class="valider_base">
+        <div class="button_validation" onclick="window.location.href = '/click&collect/tacosclassicoptions/panier';">
+            <p class="button_valider">Valider</p>
+        </div>
+    </div>
+ 
+
+    </main>
+
+    {% block javascripts %}
+        <script src="{{ asset('/scripts.js') }}"></script>
+    {% endblock %}
+</body>

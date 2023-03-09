@@ -1,0 +1,39 @@
+     {% for tacos in listeTacosOption %}
+
+                    <div class="picture">
+                        <div class="picture_food">
+                            <img class="imgoption" src="{{tacos.image}}" alt="">
+                        </div>
+                    </div>
+                
+                
+                    <div class="item_card">
+                        <div class="items_card">
+                            <div class="group_title_card">
+                                <h1 class="card_title">{{tacos.title}}</h1>
+                                <div class="croix">
+                                    <a href="croix">
+                                        <img class="croix_item" src="/images/croix.svg" alt="">
+                                    </a>
+                                </div>                  
+                            </div>
+                            <h1 class="card_title">{{tacos.price}} € </h1>  
+                            <p class="choice">Fait ton choix :</p>
+
+                            <div class="button_option">
+                        {% for option in listeTacosOption %}
+                                <div class="button_recipe">
+                                    <p class="button_item">{{option.option}} | + {{option.priceoption}} €</p>
+                                </div>
+                        {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="valider">
+                            <div class="button_validation" onclick="window.location.href = '/click&collect/tacosclassicoptions/panier';">
+                                <p class="button_valider">Valider</p>
+                            </div>
+                        </div>
+                    </div>
+
+        {% endfor %}

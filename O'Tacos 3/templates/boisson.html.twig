@@ -1,0 +1,13 @@
+
+
+            {% for boisson in listeBoisson %}
+                <div onclick="window.location.href = '/click&collect/options';">
+                    <div class="button_categorie">
+                            <img class="button_image" src="{{boisson.image}}" alt="">
+                            <p class="button_content">{{boisson.title}}</p>
+                            <p class="button_description">{{boisson.description}}</p>
+                            <p class="button_price">{{boisson.price}} €</p>
+                    </div>
+                </div>
+            {% endfor %}
+

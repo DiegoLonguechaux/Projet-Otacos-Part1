@@ -1,0 +1,12 @@
+
+
+            {% for tacos in listeTacos %}
+                <div>
+                    <div class="button_categorie">
+                            <img class="button_image" src="{{tacos.image}}" alt="">
+                            <p class="button_content">{{tacos.title}}</p>
+                            <p class="button_description">{{tacos.description}}</p>
+                            <p class="button_price">{{tacos.price}} €</p>
+                    </div>
+                </div>
+            {% endfor %}

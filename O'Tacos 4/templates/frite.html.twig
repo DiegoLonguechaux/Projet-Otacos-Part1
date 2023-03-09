@@ -1,0 +1,14 @@
+
+
+
+            {% for frite in listeFrite %}
+                <div onclick="window.location.href = '/click&collect/options';">
+                    <div class="button_categorie">
+                            <img class="button_image" src="{{frite.image}}" alt="">
+                            <p class="button_content">{{frite.title}}</p>
+                            <p class="button_description">{{frite.description}}</p>
+                            <p class="button_price">{{frite.price}} €</p>
+                    </div>
+                </div>
+            {% endfor %}
+
